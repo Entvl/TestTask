@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course catalog</title>
+    <link rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Courses</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="{% url 'home' %}">Catalog</a>
+        <a class="p-2 text-dark" href="{% url 'my_courses' %}">My courses</a>
+        <a class="p-2 text-dark" href="{% url 'create' %}">Add course</a>
+    </nav>
+    <a class="btn btn-outline-primary" href="{% url 'login' %}">Sign in</a>
+    <a class="ml-2 btn btn-outline-primary" href="{% url 'signup' %}">Sign up</a>
+</div>
+    <div class="container">
+        {% if messages %}
+        <ul class="messages">
+            {%for message in messages %}
+            <script>
+                alert('{{message}}');
+            </script>
+            {% endfor %}
+        </ul>
+        {% endif %}
+{% block content %} {% endblock%}
+    </div>
+</body>
+</html>

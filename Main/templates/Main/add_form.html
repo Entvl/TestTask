@@ -1,0 +1,15 @@
+{% extends 'Main/base.html' %}
+{% block content %}
+    <h1>Create course</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.user}}
+        Image: {{ form.icon }}<br><br>
+        {{ form.name }}<br>
+        {{ form.description }}<br>
+        Price($): {{ form.price }}<br><br>
+        Start date: {{ form.start_date }}<br><br>
+        End date: {{ form.end_date }}<br><br>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+{% endblock %}

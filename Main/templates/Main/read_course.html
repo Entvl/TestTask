@@ -1,0 +1,27 @@
+{% extends 'Main/base.html' %}
+{% block content %}
+<table>
+    <tr>
+        <td>
+            <img src="{{element.icon.url}}" style='width:200px;height:200px;'/>
+        </td>
+        <td>
+            <div style="margin-left: 20px">
+                 <h3>{{element.name}}</h3>
+                 <h4>Price: <strong>{{element.price}}$</strong></h4>
+                <br>
+                <h6> The course start on "{{element.start_date}}" and ends on "{{element.end_date}}"</h6>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+
+        </td>
+        <td>
+            <p> {{element.description}} </p>
+        </td>
+    </tr>
+
+</table>
+{% endblock%}

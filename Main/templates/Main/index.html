@@ -1,0 +1,52 @@
+{% extends 'Main/base.html' %}
+{% block content %}
+<form method="GET" action=".">
+        <div class="form-row">
+            <div class="form-group col-12">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="name_of_course" placeholder="Name contains..." />
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-12">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="description_of_course" placeholder="Description contains..." />
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    <div class="form-row">
+          <div class="form-group col-md-2 col-lg-3">
+            <label for="publishDateMin">Start date minimum</label>
+            <input type="date" class="form-control" id="publishDateMin" name="start_date_min">
+          </div>
+          <div class="form-group col-md-2 col-lg-3">
+            <label for="publishDateMax">Start date maximum</label>
+            <input type="date" class="form-control" id="publishDateMax" name="start_date_max">
+          </div>
+    </div>>
+        <button type="submit" class="btn btn-primary">Search</button>
+</form>
+{% for el in data%}
+    <div class="alert alert-warning mt-2">
+        <li>
+            <a href="{%url 'read' el.id%}"> <img src="{{el.icon.url}}" style='width:100px;height:100px;display:inline-block;'/>
+                 <div style="display: inline-block; margin-left: 20px">
+                    <h2>{{el.name}} ({{el.price}}$)</h2>
+                    <p><strong>{{el.start_date}} - {{el.end_date}}</strong></p>
+                 </div>
+             </a>
+        </li>
+    </div>
+{% endfor %}
+{% endblock%}

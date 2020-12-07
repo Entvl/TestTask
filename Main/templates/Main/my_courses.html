@@ -1,0 +1,27 @@
+{% extends 'Main/base.html' %}
+{% block content %}
+{% for el in data%}
+    <div class="alert alert-warning mt-2">
+        <li>
+            <a href="{%url 'read' el.id%}"> <img src="{{el.icon.url}}" style='width:100px;height:100px;display:inline-block;'/>
+                 <div style="display: inline-block; margin-left: 20px">
+                    <h2>{{el.name}} ({{el.price}}$)</h2>
+                    <p><strong>{{el.start_date}} - {{el.end_date}}</strong></p>
+                     <div class="form-row">
+                        <div class="form-group col-md-2 col-lg-3">
+                            <div class="input-group">
+                                <a class="btn btn-outline-primary" href="{% url 'edit' el.id%}">Edit</a>
+                            </div>
+                        </div>
+                         <div class="form-group col-md-2 col-lg-2">
+                            <div class="input-group">
+                                <a class="ml-2 btn btn-outline-primary" href="{% url 'delete' el.id %}">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+             </a>
+        </li>
+    </div>
+{% endfor %}
+{% endblock%}
