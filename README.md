@@ -7,7 +7,7 @@ git clone https://github.com/Entvl/TestTask.git
 ```
 2) Installing libraries
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 3) Open project and run it with comand
 ```
